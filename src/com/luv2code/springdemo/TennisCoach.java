@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * @Component - To find Spring within the component scan that which classes are beans
  * thatSillyCoach - bean id
  */
-@Component("thatSillyCoach")
+@Component
 public class TennisCoach implements Coach {
 
     @Override
