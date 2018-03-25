@@ -13,6 +13,11 @@ Bean Scopes refer to lifecycle of a bean:
 Default Scope of Spring bean is SINGLETON (shared reference to the same bean)
                                 PROTOTYPE (different references to different beans)
 
+Bean Lifecycle
+  - Add any method to the bean class
+  - Annotate those with @PostConstruct
+                        @PreDestroy
+
 
 Spring Annotations
     1. @Component - To find Spring within the component scan package that which classes are beans
