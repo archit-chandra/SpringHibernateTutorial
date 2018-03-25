@@ -9,16 +9,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class TennisCoach implements Coach {
-    
+
     private FortuneService fortuneService;
 
-    /**
-     * @Autowired - lets spring find the implementation of FortuneService
-     * creates the bean and automatically injects here
-     */
-    @Autowired
-    public TennisCoach(FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
+    public TennisCoach() {
+        System.out.println(">> TennisCoach: Inside default constructor");
     }
 
     @Override
@@ -29,5 +24,11 @@ public class TennisCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+    @Autowired
+    public void setFortuneService(FortuneService fortuneService) {
+        System.out.println(">> TennisCoach: Inside setFortuneService() setter method");
+        this.fortuneService = fortuneService;
     }
 }
