@@ -30,6 +30,8 @@ Spring Annotations
                         It eliminates xml config file altogether.
     -> @ComponentScan - Tells Spring to look for all beans inside the package
                         @ComponentScan("com.gemalto.archit")
+    -> @PropertySource- To inject values from properties file @PropertySource("classpath:sport.properties")
+    -> @Value         - To inject values from properties file @Value("${foo.email}")
     -> @Bean          - To create bean inside the configuration class with @Configuration
     -> @Scope         - Defines bean scope (Default:Singleton)
     -> @PostConstruct - Bean lifecycle
