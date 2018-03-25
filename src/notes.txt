@@ -5,6 +5,15 @@ Spring main class steps:
     4. Close the context
 
 
+Bean Scopes refer to lifecycle of a bean:
+ - How long the bean lives
+ - How many instances are created
+ - How is the bean shared
+
+Default Scope of Spring bean is SINGLETON (shared reference to the same bean)
+                                PROTOTYPE (different references to different beans)
+
+
 Spring Annotations
     1. @Component - To find Spring within the component scan package that which classes are beans
                     Can also provide explicit bean id @Component("theBean")

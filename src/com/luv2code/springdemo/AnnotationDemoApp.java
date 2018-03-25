@@ -11,6 +11,14 @@ public class AnnotationDemoApp {
 
 //        Retrieve the bean from Spring container
         Coach coach = context.getBean("tennisCoach", Coach.class);
+        Coach otherCoach = context.getBean("tennisCoach", Coach.class);
+
+        System.out.println("---------------Scope Testing-------------------");
+        boolean result = (coach == otherCoach);
+        System.out.println("Pointing to the same object   : " + result);
+        System.out.println("Memory location of coach      : " + coach);
+        System.out.println("Memory location of otherCoach : " + otherCoach);
+        System.out.println("---------------Scope Testing-------------------");
 
 //        Call methods on the bean
         System.out.println(coach.getDailyWorkout());
