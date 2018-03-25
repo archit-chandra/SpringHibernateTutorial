@@ -14,6 +14,8 @@ public class AnnotationDemoApp {
 
 //        Call methods on the bean
         System.out.println(coach.getDailyWorkout());
+        // after injection of FortuneService
+        System.out.println(coach.getDailyFortune());
 
 //        Close the context
         context.close();
