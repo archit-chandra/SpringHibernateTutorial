@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
+    @Autowired
     private FortuneService fortuneService;
 
     public TennisCoach() {
@@ -24,11 +25,5 @@ public class TennisCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
-    }
-
-    @Autowired
-    public void doAnyCrazyStuff(FortuneService fortuneService) {
-        System.out.println(">> TennisCoach: Inside doAnyCrazyStuff() method");
-        this.fortuneService = fortuneService;
     }
 }
