@@ -1,0 +1,38 @@
+Spring main class steps:
+    1. Define/Read the Spring config file = (container) = (context)
+    2. Retrieve the bean(s) from Spring container
+    3. Call method(s) on the bean
+    4. Close the context
+
+
+Bean Scopes refer to lifecycle of a bean:
+ - How long the bean lives
+ - How many instances are created
+ - How is the bean shared
+
+Default Scope of Spring bean is SINGLETON (shared reference to the same bean)
+                                PROTOTYPE (different references to different beans)
+
+Bean Lifecycle
+  - Add any method to the bean class
+  - Annotate those with @PostConstruct
+                        @PreDestroy
+
+
+Spring Annotations
+    -> @Component     - To find Spring within the component scan package that which classes are beans
+                        Can also provide explicit bean id @Component("theBean")
+
+    -> @Autowired     - To let Spring find the bean implementation(s) of FortuneService
+                        Selects the appropriate candidate with the help of @Qualifier
+                        Creates the bean and automatically injects at (Contructor, Setter, Method, Field)
+    -> @Configuration - To let Spring know that this is a Java Configuration class.
+                        It eliminates xml config file altogether.
+    -> @ComponentScan - Tells Spring to look for all beans inside the package
+                        @ComponentScan("com.gemalto.archit")
+    -> @PropertySource- To inject values from properties file @PropertySource("classpath:sport.properties")
+    -> @Value         - To inject values from properties file @Value("${foo.email}")
+    -> @Bean          - To create bean inside the configuration class with @Configuration
+    -> @Scope         - Defines bean scope (Default:Singleton)
+    -> @PostConstruct - Bean lifecycle
+    -> @PreDestroy    - Bean lifecycle
